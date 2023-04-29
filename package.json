@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "lighthouse": "^10.1.1"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^13.3.2"
   }
 }
