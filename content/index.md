@@ -7,33 +7,28 @@ seo:
 
 ---main
 images:
-  - src: /hero.jpg
+  - src: /myhero2.jpg
     alt: my photo
-  - src: /hero-mobile.jpg
+  - src: /hero-mobile2.jpeg
     alt: my photo
 ---
 
-# <Typewriter>Carl Hanson</Typewriter>
+# <Typewriter>Kevin Lin</Typewriter>
 
-# *Web Developer* <span>&</span> *Growth Consultant*
+# *Web Developer*  
 
 <Sep size={12} />
 
-Sometimes five Imprimaturs are seen together dialogue-wise in the
-piazza of one title-page, complimenting and ducking each to other with
-their shaven reverences, whether the author, who stands by in
-perplexity at the foot of his epistle, shall to the press or to the
-sponge.
+Motivated college junior pursuing an entry-level web development opportunity to leverage skills in HTML, CSS, and JavaScript while contributing to the team's success and gaining valuable industry experience.
 
 
 
 ---achievements
-- number: 6+
-  text: Years of experience
-- number: 60+
+- number: 3rd
+  text: Year undergraduate
+- number: 5+
   text: Projects Completed
-- number: 5
-  text: OpenSource Libraries
+
 ---
 
 
@@ -44,21 +39,17 @@ sponge.
   Download Resume
 </Button>
 
-
-
----companies
-title: Trusted By
-list:
-  - name: Company 1
-    icon:
-      src: /icons/logo-1.svg
-  - name: Company 2
-    icon:
-      src: /icons/logo-3.svg
-  - name: Company 3
-    icon:
-      src: /icons/logo-3.svg
-  - name: Company 4
-    icon:
-      src: /icons/logo-4.svg
+---articles
+collection:
+  path: /blog
+  recordsPerPage: 6
+  limit: 6
+  sortBy: date
+  filterBy:
+    featured:
+      $eq: true
 ---
+
+### *Featured Articles*
+
+Featured handcrafted articles about my thoughts and experiments.
