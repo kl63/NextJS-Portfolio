@@ -4,7 +4,9 @@ import ContentRenderer from '@/components/ContentRenderer'
 import Image from '@/components/Image'
 import Sep from '@/components/Sep'
 import Reveal from '@/components/Reveal'
+import BlogCardHorizontalMini from '@/components/BlogCardHorizontalMini'
 import Companies from '@/components/Companies'
+import Newsletter from '@/components/Newsletter'
 
 const HeroPhoto = ({ main }) => (
   <>
@@ -76,9 +78,22 @@ const Achievements = ({ achievements }) => (
       </div>
     ))}
   </Reveal>
+  
+)
+const Articles = ({ articles }) => (
+  <>
+    <div className="prose prose-invert text-center">
+      <ContentRenderer source={articles?.content} />
+    </div>
+    <div className="mt-8 grid gap-6 md:mt-14 md:gap-4 lg:grid-cols-2">
+      {articles?.collection?.records?.map((record) => (
+        <BlogCardHorizontalMini key={record.slug.join('/')} {...record} />
+      ))}
+    </div>
+  </>
 )
 
-const Layout = ({ main = {}, cta = {}, achievements = [], companies }) => (
+const Layout = ({ main = {},articles, cta = {}, achievements = [], companies }) => (
   <div className="mx-auto my-auto p-4 md:p-10 lg:p-20">
     <div className="items-center text-center md:flex md:text-left">
       <div className="inline-block shrink-0 md:order-2 md:-ml-40">
@@ -95,7 +110,11 @@ const Layout = ({ main = {}, cta = {}, achievements = [], companies }) => (
     <div className="mt-6 mt-12 hidden px-4 md:block">
       <Companies {...companies} />
     </div>
+    <div className="bg-gradient-omega-900 py-10 md:p-10 lg:p-20">
+      <Articles articles={articles} />
+    </div>
   </div>
+
 )
 
 export default Layout

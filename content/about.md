@@ -8,7 +8,7 @@ seo:
 
 
 ---personal_info
-name: CARL HANSON
+name: KEVIN LIN
 images:
   - src: /about.jpg
     alt: my image
@@ -29,22 +29,13 @@ Ullamco cillum pariatur qui eu. Aliqua quis in adipisicing nulla do. Reprehender
 
 ---cta
 ---
-## Ready to discuss your project?
-
-Let's super-charge your business today!
-
-<Button href="/contact">
-  Get a Free Price Quote
-</Button>
-
 
 
 ---skills_header
 title: I'm Specialized in
 list:
-  - Front-End Design
-  - Back-End Development
-  - Modern Frameworks
+  - Web Development
+  - DevOps
 ---
 
 
@@ -52,8 +43,8 @@ list:
 ---skills[0]
 title: Back-End Development
 list:
-  - title: Node.js
-    level: 1
+  - title: Next.js
+    level: 3
     icon:
       src: /icons/nodedotjs.svg
   - title: Prisma
