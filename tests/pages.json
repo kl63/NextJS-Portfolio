@@ -2,9 +2,17 @@
     "pages": [
       {
         "path": "/",
-        "title": "Kevin Lin | Web Developer"
+        "title": "Kevin Lin | Kevin Lin's Portfolio Website"
+      },
+      {
+        "path": "/about",
+        "title": "Kevin Lin | About Me"
       }
      
     ]
 }
+
+
+
+
   

@@ -1,7 +1,7 @@
 ---
 layout: Home
 seo:
-  title: Web Developer
+  title: Kevin Lin's Portfolio Website
   description: Custom description for this page goes here
 ---
 
@@ -19,7 +19,7 @@ images:
 
 <Sep size={12} />
 
-Motivated college junior pursuing an entry-level web development opportunity to leverage skills in HTML, CSS, and JavaScript while contributing to the team's success and gaining valuable industry experience.
+As a driven college junior with a passion for web development, I am seeking an opportunity to apply my expertise in HTML, CSS, and JavaScript to contribute to a team's success and gain valuable industry experience.
 
 
 
