@@ -3,6 +3,10 @@
       {
         "path": "/",
         "title": "Kevin Lin | Web Developer"
+      },
+      {
+        "path": "/about",
+        "title": "Kevin Lin | About Me"
       }
      
     ]
