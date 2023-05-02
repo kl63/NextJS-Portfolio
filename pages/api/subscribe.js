@@ -1,44 +1,46 @@
+const fetch = require('node-fetch');
+
 const subscribe = async (req, res) => {
-  const { email } = req.body
-
-  if (req.method !== 'POST') {
-    return res.status(405).send({ error: 'Request method is not allowed.' })
-  }
-
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required.' })
-  }
-
   try {
-    const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
-    const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID
-    const MAILCHIMP_DC = process.env.MAILCHIMP_DC;
+    const { email } = req.body;
 
-    const API_URL = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required.' });
+    }
+
+    if (req.method !== 'POST') {
+      return res.status(405).send({ error: 'Request method is not allowed.' });
+    }
+
+    const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
+    const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID;
+    const MAILCHIMP_DC = process.env.MAILCHIMP_DC;
+    const API_URL = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`;
 
     const data = {
       email_address: email,
       status: 'subscribed',
-    }
+    };
 
     const response = await fetch(API_URL, {
-      body: JSON.stringify(data),
+      method: 'POST',
       headers: {
         'Authorization': `apikey ${MAILCHIMP_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      method: 'POST',
-    })
+      body: JSON.stringify(data)
+    });
 
-    if (response.status >= 400) {
-      const error = await response.json()
-      return res.status(400).json({ error: error.detail || 'There was an error subscribing to the list.' })
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.detail || 'There was an error subscribing to the list.');
     }
 
-    return res.status(201).json({ error: '' })
+    return res.status(201).json({ message: 'Subscribed successfully' });
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() })
+    console.error(error);
+    return res.status(500).json({ error: error.message || error.toString() });
   }
-}
+};
 
-export default subscribe
+export default subscribe;
