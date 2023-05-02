@@ -1,12 +1,15 @@
-const subscribe = async (req, res) => {
-  const { email } = req.body
+import fetch from 'isomorphic-unfetch';
 
+const subscribe = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).send({ error: 'Request method is not allowed.' })
   }
 
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required.' })
+  const { email } = req.body;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email || !emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Please provide a valid email address.' })
   }
 
   try {
@@ -32,13 +35,15 @@ const subscribe = async (req, res) => {
 
     if (response.status >= 400) {
       const error = await response.json()
+      console.error(error)
       return res.status(400).json({ error: error.detail || 'There was an error subscribing to the list.' })
     }
 
     return res.status(201).json({ error: '' })
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() })
+    console.error(error)
+    return res.status(500).json({ error: 'Something went wrong. Please try again later.' })
   }
 }
 
-export default subscribe
+export default subscribe;
