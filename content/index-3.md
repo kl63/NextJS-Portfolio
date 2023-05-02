@@ -69,8 +69,8 @@ list:
 ---articles
 collection:
   path: /blog
-  recordsPerPage: 6
-  limit: 6
+  recordsPerPage: 9
+  limit: 9
   sortBy: date
   filterBy:
     featured:

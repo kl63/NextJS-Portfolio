@@ -113,6 +113,13 @@ const Layout = ({ main = {},articles, cta = {}, achievements = [], companies }) 
     <div className="bg-gradient-omega-900 py-10 md:p-10 lg:p-20">
       <Articles articles={articles} />
     </div>
+    <div className="container my-5">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <Newsletter />
+    </div>
+  </div>
+</div>
   </div>
 
 )

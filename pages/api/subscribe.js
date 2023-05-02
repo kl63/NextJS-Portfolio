@@ -1,8 +1,3 @@
-/** *************************************************************
- * Any file inside the folder pages/api is mapped to /api/* and *
- * will be treated as an API endpoint instead of a page.        *
- ****************************************************************/
-
 const subscribe = async (req, res) => {
   const { email } = req.body
 
@@ -15,20 +10,29 @@ const subscribe = async (req, res) => {
   }
 
   try {
-    const FORM_ID = process.env.CONVERTKIT_FORM_ID
-    const API_KEY = process.env.CONVERTKIT_API_KEY
-    const API_URL = process.env.CONVERTKIT_API_URL
+    const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
+    const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID
+    const MAILCHIMP_DC = process.env.MAILCHIMP_DC;
 
-    const data = { email, api_key: API_KEY }
+    const API_URL = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`
 
-    const response = await fetch(`${API_URL}forms/${FORM_ID}/subscribe`, {
+    const data = {
+      email_address: email,
+      status: 'subscribed',
+    }
+
+    const response = await fetch(API_URL, {
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Authorization': `apikey ${MAILCHIMP_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
       method: 'POST',
     })
 
     if (response.status >= 400) {
-      return res.status(400).json({ error: 'There was an error subscribing to the list.' })
+      const error = await response.json()
+      return res.status(400).json({ error: error.detail || 'There was an error subscribing to the list.' })
     }
 
     return res.status(201).json({ error: '' })
