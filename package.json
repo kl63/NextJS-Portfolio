@@ -37,6 +37,7 @@
     "webpack-cli": "^5.0.2"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/bundle-analyzer": "^13.3.2",
     "@next/font": "^13.1.6",
     "@sendgrid/mail": "^7.7.0",
@@ -44,6 +45,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@vercel/analytics": "^1.0.0",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "color": "^4.2.3",
     "dotenv": "^16.0.3",

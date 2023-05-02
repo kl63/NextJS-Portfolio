@@ -42,8 +42,8 @@ As a driven college junior with a passion for web development, I am seeking an o
 ---articles
 collection:
   path: /blog
-  recordsPerPage: 6
-  limit: 6
+  recordsPerPage: 9
+  limit: 9
   sortBy: date
   filterBy:
     featured:

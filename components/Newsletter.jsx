@@ -92,43 +92,42 @@ const Newsletter = ({ className }) => {
       <IntroMessage />
       {isSubmitSuccessful ? (
         <SuccessMessage handleReset={reset} />
-      ) : (
+        ) : (
         <form
-          className="relative mx-auto my-6 flex items-start justify-between"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className="mr-3 inline-block grow">
-            <FormInput
-              disabled={isSubmitting}
-              type="text"
-              name="email"
-              placeholder="Johndoe@example.com"
-              aria-label="email address"
-              hasError={errors.email || errors.service}
-              {...register('email', {
-                required: {
-                  value: true,
-                  message: 'Email is required.',
-                },
-                pattern: {
-                  value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
-                  message: 'Email is invalid.',
-                },
-              })}
-            />
-            <div className="absolute bottom-full left-0 z-10">
-              <ErrorMessage errors={errors} name="email" />
-              <ErrorMessage errors={errors} name="service" />
-            </div>
-          </div>
-          <Button as="button" type="submit" size="xs" disabled={isSubmitting}>
-            Subscribe
-          </Button>
+               className="relative mx-auto my-6 flex items-start justify-between"
+               onSubmit={handleSubmit(onSubmit)}
+             >
+        <div className="mr-3 inline-block grow">
+        <FormInput
+        disabled={isSubmitting}
+        type="text"
+        name="email"
+        placeholder="Johndoe@example.com"
+        aria-label="email address"
+        hasError={errors.email || errors.service}
+        {...register('email', {
+        required: {
+        value: true,
+        message: 'Email is required.',
+        },
+        pattern: {
+        value: /^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/i,
+        message: 'Email is invalid.',
+        },
+        })}
+        />
+        <div className="absolute bottom-full left-0 z-10">
+        <ErrorMessage errors={errors} name="email" />
+        <ErrorMessage errors={errors} name="service" />
+        </div>
+        </div>
+        <Button as="button" type="submit" size="xs" disabled={isSubmitting}>
+        Subscribe
+        </Button>
         </form>
-      )}
-      
-    </div>
-  )
-}
-
-export default Newsletter
+        )}
+        </div>
+        )
+        }
+        
+        export default Newsletter
