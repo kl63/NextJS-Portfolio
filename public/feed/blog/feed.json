@@ -22,33 +22,11 @@
             }
         },
         {
-            "id": "http://localhost:3000/blog/education/How-AI-Can-Boost-School-Performance-Through-Agile-and-Lean-Strategies",
-            "url": "http://localhost:3000/blog/education/How-AI-Can-Boost-School-Performance-Through-Agile-and-Lean-Strategies",
-            "title": "How AI Can Boost School Performance Through Agile and Lean Strategies",
-            "summary": "Discusses how the integration of AI technology with agile and lean principles can optimize student learning and improve school performance.",
-            "date_modified": "2023-04-19T00:00:00.000Z",
-            "author": {
-                "name": "Kevin Lin",
-                "url": "https://twitter.com/handle"
-            }
-        },
-        {
             "id": "http://localhost:3000/blog/education/The-Future-of-Education:-Combining-AI,-Agile,-and-Lean Principles-for-Success",
             "url": "http://localhost:3000/blog/education/The-Future-of-Education:-Combining-AI,-Agile,-and-Lean Principles-for-Success",
             "title": "The Future of Education: Combining AI, Agile, and Lean Principles for Success",
             "summary": "The future of education involves integrating AI technology and implementing agile and lean principles to improve learning outcomes and student success.",
             "date_modified": "2023-04-19T00:00:00.000Z",
-            "author": {
-                "name": "Kevin Lin",
-                "url": "https://twitter.com/handle"
-            }
-        },
-        {
-            "id": "http://localhost:3000/blog/guides/A-Beginner's-Guide-to-HTML-and-CSS",
-            "url": "http://localhost:3000/blog/guides/A-Beginner's-Guide-to-HTML-and-CSS",
-            "title": "A Beginner's Guide to HTML and CSS",
-            "summary": "HTML and CSS are essential languages in web development. HTML structures content on the web, while CSS styles and formats that content. They are the basis of almost every website.",
-            "date_modified": "2023-05-01T00:00:00.000Z",
             "author": {
                 "name": "Kevin Lin",
                 "url": "https://twitter.com/handle"
@@ -81,17 +59,6 @@
             "url": "http://localhost:3000/blog/web-dev/Dockerizing Your Web-Development-Workflow",
             "title": "Dockerizing Your Web Development Workflow",
             "summary": "In this article, we will discuss the benefits of Dockerizing your web development workflow and how it can simplify the process of building and deploying web applications. We'll cover the basics of Docker and provide examples of how it can be used in different development environments.",
-            "date_modified": "2023-05-02T00:00:00.000Z",
-            "author": {
-                "name": "Kevin Lin",
-                "url": "https://twitter.com/handle"
-            }
-        },
-        {
-            "id": "http://localhost:3000/blog/web-dev/Leveraging-Google-Analytics-for-Better-Web Development",
-            "url": "http://localhost:3000/blog/web-dev/Leveraging-Google-Analytics-for-Better-Web Development",
-            "title": "Leveraging Google Analytics for Better Web Development",
-            "summary": "This article explores how Google Analytics can be used to inform and improve web development by tracking user behavior, optimizing page load times, and ensuring mobile optimization.",
             "date_modified": "2023-05-02T00:00:00.000Z",
             "author": {
                 "name": "Kevin Lin",

@@ -4,7 +4,7 @@
         <title>Kevin Lin Personal Site</title>
         <link>http://localhost:3000</link>
         <description>Hi there! I'm Kevin Lin a Web &amp; Information Systems major attending New Jersey Insitute of Technology. This is my portfolio website.</description>
-        <lastBuildDate>Tue, 02 May 2023 22:40:16 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 May 2023 23:01:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en_US</language>
@@ -23,27 +23,11 @@
             <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
         </item>
         <item>
-            <title><![CDATA[How AI Can Boost School Performance Through Agile and Lean Strategies]]></title>
-            <link>http://localhost:3000/blog/education/How-AI-Can-Boost-School-Performance-Through-Agile-and-Lean-Strategies</link>
-            <guid>http://localhost:3000/blog/education/How-AI-Can-Boost-School-Performance-Through-Agile-and-Lean-Strategies</guid>
-            <pubDate>Wed, 19 Apr 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Discusses how the integration of AI technology with agile and lean principles can optimize student learning and improve school performance.]]></description>
-            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
-        </item>
-        <item>
             <title><![CDATA[The Future of Education: Combining AI, Agile, and Lean Principles for Success]]></title>
             <link>http://localhost:3000/blog/education/The-Future-of-Education:-Combining-AI,-Agile,-and-Lean Principles-for-Success</link>
             <guid>http://localhost:3000/blog/education/The-Future-of-Education:-Combining-AI,-Agile,-and-Lean Principles-for-Success</guid>
             <pubDate>Wed, 19 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[The future of education involves integrating AI technology and implementing agile and lean principles to improve learning outcomes and student success.]]></description>
-            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
-        </item>
-        <item>
-            <title><![CDATA[A Beginner's Guide to HTML and CSS]]></title>
-            <link>http://localhost:3000/blog/guides/A-Beginner's-Guide-to-HTML-and-CSS</link>
-            <guid>http://localhost:3000/blog/guides/A-Beginner's-Guide-to-HTML-and-CSS</guid>
-            <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[HTML and CSS are essential languages in web development. HTML structures content on the web, while CSS styles and formats that content. They are the basis of almost every website.]]></description>
             <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
         </item>
         <item>
@@ -68,14 +52,6 @@
             <guid>http://localhost:3000/blog/web-dev/Dockerizing Your Web-Development-Workflow</guid>
             <pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[In this article, we will discuss the benefits of Dockerizing your web development workflow and how it can simplify the process of building and deploying web applications. We'll cover the basics of Docker and provide examples of how it can be used in different development environments.]]></description>
-            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
-        </item>
-        <item>
-            <title><![CDATA[Leveraging Google Analytics for Better Web Development]]></title>
-            <link>http://localhost:3000/blog/web-dev/Leveraging-Google-Analytics-for-Better-Web Development</link>
-            <guid>http://localhost:3000/blog/web-dev/Leveraging-Google-Analytics-for-Better-Web Development</guid>
-            <pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[This article explores how Google Analytics can be used to inform and improve web development by tracking user behavior, optimizing page load times, and ensuring mobile optimization.]]></description>
             <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
         </item>
         <item>
