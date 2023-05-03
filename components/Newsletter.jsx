@@ -24,7 +24,7 @@ const ErrorMessage = ({ errors, name }) =>
   ) : null
 
 const SuccessMessage = ({ handleReset }) => (
-  <div className="my-6 mx-auto flex max-w-md justify-between bg-omega-800 p-3">
+  <div className="mx-auto my-6 flex max-w-md justify-between bg-omega-800 p-3">
     <span className="text-alpha">Please check your inbox and confirm your email.</span>
     <button onClick={() => handleReset()} className="h-5 w-5 hover:bg-omega-900">
       <IoClose className="mx-auto h-4 w-4 text-omega-500" />
@@ -43,7 +43,7 @@ const Badge = () => (
       <span className="text-xs">BUILT WITH</span>
       <Icon
         src="/icons/convertkit.svg"
-        className="ml-2 mb-1 inline h-6 w-24 align-middle group-hover:text-[#FB6970]"
+        className="mb-1 ml-2 inline h-6 w-24 align-middle group-hover:text-[#FB6970]"
       />
     </a>
   </div>
@@ -69,17 +69,24 @@ const Newsletter = ({ className }) => {
           credentials: 'same-origin',
         }),
       })
-      if (res.status === 201) {
-        return true
+      if (!res.ok) {
+        const json = await res.json()
+        if (json.error) {
+          throw new Error(json.error)
+        }
+        throw new Error('Something went wrong!')
       }
-      const json = await res.json()
-      if (json.error) {
-        throw json.error
+  
+      // Clear the form if the submission was successful
+      if (res.ok) {
+        reset()
       }
     } catch (error) {
-      setError('service', { type: 'serviceSideError', message: error })
+      setError('service', { type: 'serviceSideError', message: error.message || 'Something went wrong!' })
     }
   }
+  
+  
 
   React.useEffect(() => {
     if (errors.service && isValidating) {
@@ -92,42 +99,42 @@ const Newsletter = ({ className }) => {
       <IntroMessage />
       {isSubmitSuccessful ? (
         <SuccessMessage handleReset={reset} />
-        ) : (
+      ) : (
         <form
-               className="relative mx-auto my-6 flex items-start justify-between"
-               onSubmit={handleSubmit(onSubmit)}
-             >
-        <div className="mr-3 inline-block grow">
-        <FormInput
-        disabled={isSubmitting}
-        type="text"
-        name="email"
-        placeholder="Johndoe@example.com"
-        aria-label="email address"
-        hasError={errors.email || errors.service}
-        {...register('email', {
-        required: {
-        value: true,
-        message: 'Email is required.',
-        },
-        pattern: {
-        value: /^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/i,
-        message: 'Email is invalid.',
-        },
-        })}
-        />
-        <div className="absolute bottom-full left-0 z-10">
-        <ErrorMessage errors={errors} name="email" />
-        <ErrorMessage errors={errors} name="service" />
-        </div>
-        </div>
-        <Button as="button" type="submit" size="xs" disabled={isSubmitting}>
-        Subscribe
-        </Button>
+          className="relative mx-auto my-6 flex items-start justify-between"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="mr-3 inline-block grow">
+            <FormInput
+              disabled={isSubmitting}
+              type="text"
+              name="email"
+              placeholder="Johndoe@example.com"
+              aria-label="email address"
+              hasError={errors.email || errors.service}
+              {...register('email', {
+                required: {
+                  value: true,
+                  message: 'Email is required.',
+                },
+                pattern: {
+                  value: /^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/i,
+                  message: 'Email is invalid.',
+                },
+              })}
+            />
+            <div className="absolute bottom-full left-0 z-10">
+              <ErrorMessage errors={errors} name="email" />
+              <ErrorMessage errors={errors} name="service" />
+            </div>
+          </div>
+          <Button as="button" type="submit" size="xs" disabled={isSubmitting}>
+            Subscribe
+          </Button>
         </form>
-        )}
-        </div>
-        )
-        }
-        
-        export default Newsletter
+      )}
+    </div>
+  )
+}
+
+export default Newsletter

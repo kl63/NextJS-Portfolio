@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch'
-
 const subscribe = async (req, res) => {
   const { email } = req.body
 
@@ -15,6 +13,10 @@ const subscribe = async (req, res) => {
     const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
     const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID
     const MAILCHIMP_DC = process.env.MAILCHIMP_DC
+
+    if (!MAILCHIMP_API_KEY || !MAILCHIMP_LIST_ID || !MAILCHIMP_DC) {
+      return res.status(500).json({ error: 'Server configuration error.' })
+    }
 
     const API_URL = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_LIST_ID}/members`
 
@@ -32,11 +34,12 @@ const subscribe = async (req, res) => {
       method: 'POST',
     })
 
-    if (response.status === 200 || response.status === 204) {
-      return res.status(200).json({ success: true })
+    const responseBody = await response.json()
+
+    if (responseBody.status === 'subscribed') {
+      return res.status(201).json({ success: true })
     } else {
-      const error = await response.json()
-      return res.status(400).json({ error: error.detail || 'There was an error subscribing to the list.' })
+      return res.status(502).json({ error: responseBody.detail || 'There was an error subscribing to the list.' })
     }
   } catch (error) {
     return res.status(500).json({ error: error.message || error.toString() })
