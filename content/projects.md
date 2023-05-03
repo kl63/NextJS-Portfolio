@@ -12,11 +12,6 @@ repositories:
   - vercel/og-image
 ---
 
-<PageTitle>
-  ### My Open-Source Projects
-</PageTitle>
-
-Discover my most popular open-source projects on Github.
 
 
 
