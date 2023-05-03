@@ -7,7 +7,7 @@ tags:
   - web-dev
   - Playwright
 images:
-  - src: /photos/blog-testing.jpeg
+  - src: /photos/blog-testing-min.jpeg
     alt: image alt attribute
 featured: true
 ---
