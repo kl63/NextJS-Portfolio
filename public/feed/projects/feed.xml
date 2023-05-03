@@ -4,7 +4,7 @@
         <title>Kevin Lin Personal Site</title>
         <link>http://localhost:3000</link>
         <description>Hi there! I'm Kevin Lin a Web &amp; Information Systems major attending New Jersey Insitute of Technology. This is my portfolio website.</description>
-        <lastBuildDate>Wed, 03 May 2023 12:15:16 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 03 May 2023 18:24:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en_US</language>
@@ -15,22 +15,6 @@
         </image>
         <copyright>All rights reserved 2023, Kevin Lin</copyright>
         <item>
-            <title><![CDATA[Agency website design for devops company]]></title>
-            <link>http://localhost:3000/projects/agency-website-development-for-dev-x</link>
-            <guid>http://localhost:3000/projects/agency-website-development-for-dev-x</guid>
-            <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet consectetur adipiscing elit mattis faucibus odio feugiat arcu scelerisque drogon sit amenot.]]></description>
-            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
-        </item>
-        <item>
-            <title><![CDATA[Application design for finance startup]]></title>
-            <link>http://localhost:3000/projects/application-design-for-finance-startup</link>
-            <guid>http://localhost:3000/projects/application-design-for-finance-startup</guid>
-            <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.]]></description>
-            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
-        </item>
-        <item>
             <title><![CDATA[Brand refresh for saas cloud platform application]]></title>
             <link>http://localhost:3000/projects/brand-refresh-for-technology-app</link>
             <guid>http://localhost:3000/projects/brand-refresh-for-technology-app</guid>
@@ -39,11 +23,27 @@
             <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
         </item>
         <item>
-            <title><![CDATA[Crypto website development for DeFi X]]></title>
-            <link>http://localhost:3000/projects/crypto-website-development-for-defi-x</link>
-            <guid>http://localhost:3000/projects/crypto-website-development-for-defi-x</guid>
-            <pubDate>Tue, 22 Nov 2022 00:00:00 GMT</pubDate>
+            <title><![CDATA[Java Rock, Paper, Sissors Game]]></title>
+            <link>http://localhost:3000/projects/javaRPS</link>
+            <guid>http://localhost:3000/projects/javaRPS</guid>
+            <pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[A Java RPS game that uses a UI would be a graphical user interface (GUI) application that allows users to play the classic game of rock-paper-scissors against the computer.]]></description>
+            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
+        </item>
+        <item>
+            <title><![CDATA[MyWebClass.org]]></title>
+            <link>http://localhost:3000/projects/mywebclass.org</link>
+            <guid>http://localhost:3000/projects/mywebclass.org</guid>
+            <pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us.]]></description>
+            <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
+        </item>
+        <item>
+            <title><![CDATA[Personal Portfolio Website]]></title>
+            <link>http://localhost:3000/projects/portfolio-website</link>
+            <guid>http://localhost:3000/projects/portfolio-website</guid>
+            <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[This site showcases my portfolio of works, and is designed to provide a comprehensive overview of my skills and experience. Take a look around and discover my projects, achievements, and capabilities.]]></description>
             <author>lin.kevin.1923@gmail.com (Kevin Lin)</author>
         </item>
     </channel>
