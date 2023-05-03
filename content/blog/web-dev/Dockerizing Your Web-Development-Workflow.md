@@ -7,7 +7,7 @@ tags:
   - web-dev
   - Docker
 images:
-  - src: /photos/blog-docker.jpeg
+  - src: /photos/blog-docker-min.jpeg
     alt: image alt attribute
 featured: true
 ---

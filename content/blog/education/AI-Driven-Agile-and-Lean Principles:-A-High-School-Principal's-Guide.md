@@ -6,7 +6,7 @@ date: '2023-04-19'
 tags:
   - education
 images:
-  - src: /photos/blog-principal.jpeg
+  - src: /photos/blog-principal-min.jpeg
     alt: image alt attribute
 featured: true
 ---

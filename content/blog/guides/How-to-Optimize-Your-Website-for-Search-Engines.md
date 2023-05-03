@@ -6,7 +6,7 @@ date: '2023-05-01'
 tags:
   - guides
 images:
-  - src: /photos/blog-search.jpeg
+  - src: /photos/blog-search-min.jpeg
     alt: image alt attribute
 featured: true
 ---
