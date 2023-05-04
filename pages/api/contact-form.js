@@ -25,7 +25,8 @@ const appendToSheet = async (data) => {
   // Add the current date and time to the data
   const now = new Date();
   const formattedDate = now.toLocaleDateString();
-  const formattedTime = now.toLocaleTimeString();
+  const formattedTime = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+
   data['Date'] = formattedDate;
   data['Time'] = formattedTime;
 
@@ -38,13 +39,15 @@ const appendToSheet = async (data) => {
     }
     return value
   })
-
+  
   // Add the date and time to the beginning of the array
   formattedData.unshift(formattedTime, formattedDate);
-
+  
+  // Remove the last item (which is the time value) from the array
+  formattedData.splice(-1, 1);
   const request = {
     spreadsheetId: SPREADSHEET_ID,
-    range: `${SHEET_NAME}!A1`,
+    range: `${SHEET_NAME}!A1:G1`,
     valueInputOption: 'RAW',
     insertDataOption: 'INSERT_ROWS',
     resource: {
