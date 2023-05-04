@@ -66,3 +66,7 @@ const contact = async (req, res) => {
 }
 
 export default contact
+
+
+
+
