@@ -22,6 +22,13 @@ const SHEET_NAME = 'Sheet1'
 const appendToSheet = async (data) => {
   await googleAuth.authorize()
 
+  // Add the current date and time to the data
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString();
+  const formattedTime = now.toLocaleTimeString();
+  data['Date'] = formattedDate;
+  data['Time'] = formattedTime;
+
   const formattedData = Object.entries(data).map(([key, value]) => {
     if (typeof value === 'object') {
       return Object.entries(value)
@@ -31,6 +38,9 @@ const appendToSheet = async (data) => {
     }
     return value
   })
+
+  // Add the date and time to the beginning of the array
+  formattedData.unshift(formattedTime, formattedDate);
 
   const request = {
     spreadsheetId: SPREADSHEET_ID,
@@ -46,6 +56,7 @@ const appendToSheet = async (data) => {
   const response = await googleSheets.spreadsheets.values.append(request)
   return response.data
 }
+
 
 const contact = async (req, res) => {
   if (req.method !== 'POST') {
