@@ -3,15 +3,20 @@ import { config } from '../../theme.config'
 import fs from 'fs'
 import path from 'path'
 
-const googleSheetsKeyPath = path.resolve(process.cwd(), 'google-sheets-key.json')
-const googleSheetsKey = JSON.parse(fs.readFileSync(googleSheetsKeyPath, 'utf-8'))
+const googleSheetsKey = {
+  client_email: process.env.client_email,
+  private_key: process.env.private_key.replace(/\\n/g, '\n'),
+}
 
 const googleSheets = google.sheets('v4')
-const googleAuth = new google.auth.JWT(googleSheetsKey.client_email, null, googleSheetsKey.private_key, [
-  'https://www.googleapis.com/auth/spreadsheets',
-])
+const googleAuth = new google.auth.JWT(
+  googleSheetsKey.client_email,
+  null,
+  googleSheetsKey.private_key,
+  ['https://www.googleapis.com/auth/spreadsheets']
+)
 
-const SPREADSHEET_ID = '1ozGtdZVYpw3qhkaTykYRIKGds-Ocz0aTMH9rOeJeisI'
+const SPREADSHEET_ID = process.env.spreadsheet_id
 const SHEET_NAME = 'Sheet1'
 
 const appendToSheet = async (data) => {
@@ -28,7 +33,7 @@ const appendToSheet = async (data) => {
   })
 
   const request = {
-    spreadsheetId: '1ozGtdZVYpw3qhkaTykYRIKGds-Ocz0aTMH9rOeJeisI',
+    spreadsheetId: SPREADSHEET_ID,
     range: `${SHEET_NAME}!A1`,
     valueInputOption: 'RAW',
     insertDataOption: 'INSERT_ROWS',
@@ -41,7 +46,6 @@ const appendToSheet = async (data) => {
   const response = await googleSheets.spreadsheets.values.append(request)
   return response.data
 }
-
 
 const contact = async (req, res) => {
   if (req.method !== 'POST') {
@@ -60,6 +64,5 @@ const contact = async (req, res) => {
 
   return res.status(200).json({ error: '' })
 }
-
 
 export default contact

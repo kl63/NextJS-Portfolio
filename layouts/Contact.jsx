@@ -28,7 +28,7 @@ const ErrorMessage = ({ errors, name }) =>
   ) : null
 
 const SuccessMessage = () => (
-  <Reveal animation="fade-in">
+  
     <div className="absolute inset-0 z-20 flex h-full w-full items-center justify-center bg-omega-800/95">
       <div className="max-w-md text-center">
         <SlCheck className="mx-auto text-5xl text-alpha" />
@@ -36,7 +36,7 @@ const SuccessMessage = () => (
         <p>I will get back to you as soon as possible.</p>
       </div>
     </div>
-  </Reveal>
+  
 )
 
 const Contact01 = ({ main = {} }) => {
@@ -48,6 +48,8 @@ const Contact01 = ({ main = {} }) => {
     setError,
     clearErrors,
   } = methods
+
+  const formContainerRef = React.useRef(null);
 
   const onSubmit = async (data) => {
     try {
@@ -73,10 +75,13 @@ const Contact01 = ({ main = {} }) => {
 
   React.useEffect(() => {
     if (errors.service && isValidating) {
-      clearErrors('service')
+      clearErrors('service');
     }
-  }, [isValidating, errors.service, clearErrors])
 
+    if (isSubmitSuccessful && formContainerRef.current) {
+      formContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [isValidating, errors.service, clearErrors, isSubmitSuccessful]);
   return (
     <div className="my-auto p-3 md:p-6 lg:p-12">
       <div className="prose prose-invert items-start lg:flex">
