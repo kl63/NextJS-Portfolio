@@ -27,4 +27,3 @@ yarn-error.log*
 /playwright-report/
 /playwright/.cache/
 
-google-sheet-keys.json
