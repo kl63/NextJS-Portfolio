@@ -1,70 +1,65 @@
-/** *************************************************************
- * Any file inside the folder pages/api is mapped to /api/* and *
- * will be treated as an API endpoint instead of a page.        *
- ****************************************************************/
-
-import sendgrid from '@sendgrid/mail'
+import { google } from 'googleapis'
 import { config } from '../../theme.config'
+import fs from 'fs'
+import path from 'path'
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
+const googleSheetsKeyPath = path.resolve(process.cwd(), 'google-sheets-key.json')
+const googleSheetsKey = JSON.parse(fs.readFileSync(googleSheetsKeyPath, 'utf-8'))
+
+const googleSheets = google.sheets('v4')
+const googleAuth = new google.auth.JWT(googleSheetsKey.client_email, null, googleSheetsKey.private_key, [
+  'https://www.googleapis.com/auth/spreadsheets',
+])
+
+const SPREADSHEET_ID = '1ozGtdZVYpw3qhkaTykYRIKGds-Ocz0aTMH9rOeJeisI'
+const SHEET_NAME = 'Sheet1'
+
+const appendToSheet = async (data) => {
+  await googleAuth.authorize()
+
+  const formattedData = Object.entries(data).map(([key, value]) => {
+    if (typeof value === 'object') {
+      return Object.entries(value)
+        .filter(([, v]) => v)
+        .map(([k]) => k)
+        .join(', ')
+    }
+    return value
+  })
+
+  const request = {
+    spreadsheetId: '1ozGtdZVYpw3qhkaTykYRIKGds-Ocz0aTMH9rOeJeisI',
+    range: `${SHEET_NAME}!A1`,
+    valueInputOption: 'RAW',
+    insertDataOption: 'INSERT_ROWS',
+    resource: {
+      values: [formattedData],
+    },
+    auth: googleAuth,
+  }
+
+  const response = await googleSheets.spreadsheets.values.append(request)
+  return response.data
+}
+
 
 const contact = async (req, res) => {
-  const { email } = req.body
-  const { recipient, sender, subject } = config.contactForm || {}
-
-  if (!recipient) {
-    return res
-      .status(400)
-      .json({ error: 'Missing [config.contactForm.recipient] property in theme options.' })
-  }
-  if (!sender) {
-    return res
-      .status(400)
-      .json({ error: 'Missing [config.contactForm.sender] property in theme options.' })
-  }
-  if (!email) {
-    return res
-      .status(400)
-      .json({ error: 'Missing email address. Please provide a correct email address.' })
-  }
-
   if (req.method !== 'POST') {
     return res.status(405).send({ error: 'Request method is not allowed.' })
   }
 
-  const getHtmlBody = (body) => {
-    return Object.entries(body).map(([key, value]) => {
-      if (typeof value === 'string') {
-        return `<b>${key}</b>: ${value}`
-      }
-      if (typeof value === 'boolean') {
-        return value === true ? key : false
-      }
-      if (typeof value === 'object') {
-        return `<b>${key}</b>: ${getHtmlBody(value)?.filter(Boolean).join(', ')}`
-      }
-      return html
-    })
-  }
-
-  let html = getHtmlBody(req.body)
-  if (Array.isArray(html)) {
-    html = html.join('<br />')
+  if (!req.body || Object.keys(req.body).length === 0) {
+    return res.status(400).send({ error: 'Invalid or empty data received.' })
   }
 
   try {
-    await sendgrid.send({
-      to: recipient, // Your email where you'll receive emails
-      from: recipient, // your website email address here
-      replyTo: email,
-      subject: req.body.subject || subject || 'Contact form entry',
-      html,
-    })
+    await appendToSheet(req.body)
   } catch (error) {
-    return res.status(error.statusCode || 500).json({ error: error.message })
+    return res.status(500).json({ error: error.message })
   }
 
   return res.status(200).json({ error: '' })
 }
+
 
 export default contact
