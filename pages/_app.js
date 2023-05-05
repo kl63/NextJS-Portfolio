@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import ReactGA from 'react-ga';
 
 // Replace 'YOUR_TRACKING_ID' with your Google Analytics Tracking ID
-const trackingId = 'G-HEJ360ND8R';
+const trackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
 function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
