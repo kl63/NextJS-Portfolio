@@ -9,6 +9,7 @@
 import { IoLogoTwitter, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io5'
 import { TfiHome, TfiPencilAlt } from 'react-icons/tfi'
 import { SlUser, SlBriefcase, SlEnvolope, SlTrophy } from 'react-icons/sl'
+import { MdOutlinePrivacyTip } from 'react-icons/md';
 
 /**
  * Main Menu Items
@@ -64,6 +65,12 @@ export const menu = [
     slug: '/contact',
     Icon: SlEnvolope,
   },
+  {
+    name: 'Privacy Policy',
+    slug: '/privacy',
+    Icon: MdOutlinePrivacyTip,
+  },
+  
 ]
 
 /**
@@ -120,7 +127,7 @@ export const mdxConfig = {
   publicDir: 'public',
   pagesDir: 'content',
   fileExt: '.md',
-  collections: ['/blog', '/projects'],
+  collections: ['/blog', '/projects', ],
   remarkPlugins: [],
   rehypePlugins: [],
 }
