@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Kevin Lin Personal Site",
+    "home_page_url": "http://localhost:3000",
+    "feed_url": "/Users/kevinlin192003/Project/public/feed/services/feed.json",
+    "description": "Hi there! I'm Kevin Lin a Web & Information Systems major attending New Jersey Insitute of Technology. This is my portfolio website.",
+    "icon": "http://localhost:3000/favicon.ico",
+    "author": {
+        "name": "Kevin Lin",
+        "url": "https://twitter.com/handle"
+    },
+    "items": []
+}

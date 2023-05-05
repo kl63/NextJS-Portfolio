@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import MDXComponents from '@/components/MDX';
 import '@/styles/globals.css';
 import { useRouter } from 'next/router';
+import CookieConsent from 'react-cookie-consent';
 
 function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
@@ -27,7 +28,24 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <MDXProvider components={MDXComponents}>{getLayout(<Component {...pageProps} />)}</MDXProvider>
+    <>
+      <MDXProvider components={MDXComponents}>{getLayout(<Component {...pageProps} />)}</MDXProvider>
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        declineButtonText="Decline"
+        cookieName="user-consent"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        declineButtonStyle={{ fontSize: "13px" }}
+        expires={150}
+        enableDeclineButton
+      >
+        This website uses cookies to enhance the user experience.{' '}
+       
+        <a href="/privacy" style={{ marginLeft: '4px', color: 'white', textDecoration: 'underline' }}>Privacy Policy</a>
+      </CookieConsent>
+    </>
   );
 }
 
