@@ -2,7 +2,7 @@
 layout: About
 seo:
   title: About Me
-  description: Custom description for this page goes here
+  description: Discover the story behind Kevin Lin, a passionate Web & Information Systems major at New Jersey Institute of Technology.
 ---
 
 

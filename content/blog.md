@@ -2,7 +2,7 @@
 layout: Blog
 seo:
   title: My Blog
-  description: Custom description for this page goes here
+  description: Dive into insightful articles by Kevin Lin. Explore a range of topics in web development, technology, and innovative solutions. Gain valuable knowledge and stay up-to-date with the latest trends in the digital world through Kevin's engaging articles.
 collection:
   path: /blog
   sortBy: date

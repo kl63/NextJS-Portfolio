@@ -3,8 +3,8 @@
     <channel>
         <title>Kevin Lin Personal Site</title>
         <link>http://localhost:3000</link>
-        <description>Hi there! I'm Kevin Lin a Web &amp; Information Systems major attending New Jersey Insitute of Technology. This is my portfolio website.</description>
-        <lastBuildDate>Sat, 13 May 2023 14:02:11 GMT</lastBuildDate>
+        <description>Welcome to my portfolio website! I'm Kevin Lin, a Web &amp; Information Systems major at New Jersey Institute of Technology. Explore my creative work and projects as I showcase my skills in web development.</description>
+        <lastBuildDate>Sat, 13 May 2023 15:16:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en_US</language>

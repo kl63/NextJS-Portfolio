@@ -80,12 +80,12 @@ export const menu = [
 export const social = [
   {
     name: 'Twitter',
-    url: 'https://www.twitter.com/',
+    url: 'https://twitter.com/Kevinlin1923',
     Icon: IoLogoTwitter,
   },
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/',
+    url: 'https://www.instagram.com/kevin._2423/',
     Icon: IoLogoInstagram,
   },
   {
@@ -143,7 +143,7 @@ export const siteMetaData = {
   siteName: 'Kevin Lin',
   defaultTitle: 'Kevin Lin Personal Site',
   titleTemplate: 'Kevin Lin | %s',
-  description: "Hi there! I'm Kevin Lin a Web & Information Systems major attending New Jersey Insitute of Technology. This is my portfolio website.",
+  description: "Welcome to my portfolio website! I'm Kevin Lin, a Web & Information Systems major at New Jersey Institute of Technology. Explore my creative work and projects as I showcase my skills in web development.",
   email: 'lin.kevin.1923@gmail.com',
   locale: 'en_US',
   twitter: {
