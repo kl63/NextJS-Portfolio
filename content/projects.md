@@ -2,7 +2,7 @@
 layout: Projects
 seo:
   title: Web Development Projects
-  description: Custom description for this page goes here
+  description: Explore the impressive projects by Kevin Lin. Discover innovative web development solutions, creative designs, and cutting-edge technologies. Get inspired by Kevin's portfolio of projects that showcase his skills and expertise in building impactful digital experiences.
 ---
 
 ---github

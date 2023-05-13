@@ -2,7 +2,7 @@
 layout: Home
 seo:
   title: Kevin Lin's Portfolio Website
-  description: Custom description for this page goes here
+  description: Welcome to my portfolio website! I'm Kevin Lin, a Web & Information Systems major at New Jersey Institute of Technology. Explore my creative work and projects as I showcase my skills in web development.
 ---
 
 ---main
@@ -35,8 +35,8 @@ As a driven college junior with a passion for web development, I am seeking an o
 
 ---cta
 ---
-<Button href="/contact" size="lg">
-  Download Resume
+<Button href="/about" size="lg">
+  About Me
 </Button>
 
 ---articles

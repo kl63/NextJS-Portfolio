@@ -2,7 +2,7 @@
 layout: Privacy
 seo:
   title: Privacy
-  description: Custom description for this page goes here
+  description: Our privacy policy page outlines how we protect your data and respect your privacy. Learn about the measures we take to ensure the confidentiality and security of your information. 
 ---
 
 

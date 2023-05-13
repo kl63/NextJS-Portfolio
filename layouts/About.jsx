@@ -5,7 +5,6 @@ import Typewriter from '@/components/Typewriter'
 import Reveal from '@/components/Reveal'
 import Image from '@/components/Image'
 import Icon from '@/components/Icon'
-import Newsletter from '@/components/Newsletter'
 
 const History = ({ title, list }) => (
   <>
@@ -125,13 +124,6 @@ const Layout = ({ personal_info = {}, cta = {}, skills_header, skills, history }
           ))}
         </div>
       )}
-      <div className="container my-5">
-  <div className="row justify-content-center">
-    <div className="col-md-8">
-      <Newsletter />
-    </div>
-  </div>
-</div>
     </div>
     
   )

@@ -3,6 +3,7 @@ import RepositoryCard from '@/components/RepositoryCard'
 import ContentRenderer from '@/components/ContentRenderer'
 import Reveal from '@/components/Reveal'
 
+
 const Layout = ({ projects, github }) => {
   return (
     <div className="mx-auto p-3 md:p-6 lg:p-12">
